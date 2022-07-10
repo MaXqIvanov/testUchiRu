@@ -1,0 +1,68 @@
+.favorite{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.favorite_wrapper{
+    margin-top: 48px;
+    margin-bottom: 48px;
+    height: 100%;
+    width: 90%;
+    min-height: 70vh;
+
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    column-gap: 2%;
+    row-gap: 20px;
+
+    @media(max-width: 850px){
+        grid-template-columns: 48% 48%;
+        column-gap: 4%;
+    }
+
+    @media(max-width: 550px){
+        grid-template-columns: 100%;
+    }
+    @media(min-width: 1300px){
+        grid-template-columns: 24% 24% 24% 24%;
+        column-gap: 1.33%;
+    }
+    @media(min-width: 1800px){
+        grid-template-columns: 19% 19% 19% 19% 19%;
+        column-gap: 1%;
+    }
+}
+
+.cat{
+    height: 225px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cat_wrapper{
+    width: 225px;
+    height: 225px;
+    min-height: 225px;
+    min-width: 225px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.btn_favorite{
+    position: absolute;
+    bottom: 24px;
+    right: 19px;
+    height: 40px;
+    width: 40px;
+    background-image: url('../assets/heartV2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:hover{
+        background-image: url('../assets/heartV3.svg');
+    }
+}

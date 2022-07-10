@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import './App.scss';
+import { Header } from './components/Header';
+import { FavoriteCatPage } from './pages/FavoriteCatPage';
+import { MainPage } from './pages/MainPage';
+import { getCatAsync } from './store/mainSlice';
 
 function App() {
+  const dispatch = useDispatch()
+  const {page} = useSelector((state:any) => state.main)
+  useEffect(() => {
+    dispatch(getCatAsync())
+  }, [page])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+        <Routes>
+            <Route path={'/'} element={<MainPage />} />
+            <Route path={'/favorite'} element={<FavoriteCatPage />} />
+        </Routes>
     </div>
   );
 }

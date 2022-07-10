@@ -1,0 +1,37 @@
+.header{
+    height: 64px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2196F3;
+/* horizontal sheet */
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
+}
+.header_wrapper{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    .Link{
+        text-decoration: none;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        letter-spacing: 0.25px;
+        color: #FFFFFF;
+        margin-right: 10px;
+        padding: 10px;
+        opacity: 0.7;
+        transition: all linear 0.3s;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+.active{
+    opacity: 1 !important;
+}

@@ -7,14 +7,19 @@ export const MainPage = () => {
     const dispatch = useDispatch();
     const {cats, loading} = useSelector((state:any)=> state.main)
     const [currentCat, setCurrentCat]= useState(null);
-    const [fetching, setFetching] = useState(true);
-
+    let loadScroll = true;
     const scrollHandler = (e:any)=>{
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) {
-            if(loading === true){
+            if(loadScroll === true){
                 dispatch(changePage())
+                loadScroll = false;
+                setTimeout(setLoadChange, 1000);
             }
         }
+    }
+
+    const setLoadChange = ()=>{
+      loadScroll = true;
     }
 
     useEffect(() => {

@@ -8,7 +8,7 @@
 }
 .main_wrapper{
     margin-top: 48px;
-    margin-bottom: 68px;
+    margin-bottom: 48px;
     height: 100%;
     width: 90%;
     min-height: 85vh;
@@ -29,6 +29,7 @@
     @media(min-width: 1300px){
         grid-template-columns: 24% 24% 24% 24%;
         column-gap: 1.33%;
+        margin-bottom: 68px;
     }
     @media(min-width: 1800px){
         grid-template-columns: 19% 19% 19% 19% 19%;
